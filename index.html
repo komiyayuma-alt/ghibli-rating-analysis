@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Top｜ジブリ作品の可視化</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>Top｜ジブリ作品の可視化</h1>
+        <div class="subtitle">
+          A（静的）・B（動的）・C（探索）の3つで、公開年／上映時間／評価／興行収入の関係を確認する。
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="active" href="./index.html">Top</a>
+        <a href="./a.html">A：静的</a>
+        <a href="./b.html">B：動的</a>
+        <a href="./c.html">C：最終</a>
+      </nav>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h2>A：静的（公開年 × 評価）</h2>
+        <p>公開年順に並べて、評価の時系列変化を俯瞰する（折れ線）。</p>
+        <div class="hr"></div>
+        <div class="footerNote">
+          見どころ：高評価が集中する時期／急落している作品／前後の流れ
+        </div>
+        <div style="margin-top:14px;">
+          <a class="nav active" style="display:inline-flex; padding:0; background:none; border:none; box-shadow:none;">
+            <span></span>
+          </a>
+          <a href="./a.html" class="navLinkButton">Aを開く →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>B：動的（上映時間 × 評価）</h2>
+        <p>散布図＋Tooltipで、上映時間と評価の関係や監督差を観察する。</p>
+        <div class="hr"></div>
+        <div class="footerNote">
+          操作：点にマウスを置くとタイトル・年・監督・評価などが表示
+        </div>
+        <div style="margin-top:14px;">
+          <a href="./b.html" class="navLinkButton">Bを開く →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>C：最終（探索用ダッシュボード）</h2>
+      <p>指標切り替え・監督フィルタ・公開年レンジ・brushで探索し、選択作品を表で確認する。</p>
+      <div class="hr"></div>
+      <div class="footerNote">
+        操作：散布図をドラッグして範囲選択（brush）→ 右の表に選択作品が表示
+      </div>
+      <div style="margin-top:14px;">
+        <a href="./c.html" class="navLinkButton">Cを開く →</a>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <h2>うまく表示されない時</h2>
+      <div class="hr"></div>
+      <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.72); line-height:1.8;">
+        <li>GitHub Pages が <b>main / root</b> になっているか確認</li>
+        <li><b>data/ghibli.csv</b> が <b>data</b> フォルダ内にあるか確認</li>
+        <li>ページを <b>Ctrl+Shift+R（強制リロード）</b> して反映待ち</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ボタン用の最小CSS（style.cssをいじらずに足す） -->
+  <style>
+    .navLinkButton{
+      display:inline-block;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(45,212,255,.16);
+      border: 1px solid rgba(45,212,255,.45);
+      color: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      transition: .15s ease;
+      text-decoration:none;
+      font-weight: 600;
+    }
+    .navLinkButton:hover{
+      transform: translateY(-1px);
+      border-color: rgba(45,212,255,.70);
+      background: rgba(45,212,255,.22);
+    }
+  </style>
+</body>
+</html>
